@@ -1,0 +1,88 @@
+<section id="login">
+  <div class="container">
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm)">
+      <div class="col-md-6 mx-auto">
+        <div class="auth-card">
+          <div class="title my-4">
+            <span >welcome to PMS</span>
+            <h3>Login</h3>
+          </div>
+          <mat-form-field appearance="fill" class="w-100">
+            <mat-label>E-mail</mat-label>
+            <input
+              formControlName="UserName"
+              matInput
+              placeholder="Enter Your UserName"
+            />
+          </mat-form-field>
+
+          <span
+            class="text-danger p-2"
+            *ngIf="
+              loginForm.get('UserName')?.errors &&
+              loginForm.get('UserName')?.touched
+            "
+          >
+            <span *ngIf="loginForm.get('UserName')?.errors?.['required']"
+              >UserName Is Required</span
+            >
+            <span *ngIf="loginForm.get('UserName')?.errors?.['pattern']"
+              >UserName must have capital,small letters,sympols,number and pass
+              length(2)</span
+            >
+          </span>
+
+          <mat-form-field appearance="fill" class="w-100">
+            <mat-label>Password</mat-label>
+            <input
+              formControlName="password"
+              matInput
+              placeholder="Enter Your Password"
+              [type]="hide ? 'password' : 'text'"
+            />
+            <button
+              type="button"
+              mat-icon-button
+              matSuffix
+              (click)="hide = !hide"
+              [attr.aria-label]="'Hide password'"
+              [attr.aria-pressed]="hide"
+            >
+              <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+            </button>
+          </mat-form-field>
+
+          <span
+            *ngIf="
+              loginForm.get('password')?.errors &&
+              loginForm.get('password')?.touched
+            "
+            class="text-danger mb-3"
+          >
+            <span *ngIf="loginForm.get('password')?.errors?.['required']"
+              >password is required</span
+            >
+            <span *ngIf="loginForm.get('password')?.errors?.['pattern']"
+              >Password must have capital,small letters,sympols,number and pass
+              length(8-16)</span
+            >
+          </span>
+
+          <div class="d-flex justify-content-between align-items-center mb-4">
+            <a
+              [routerLink]="['/auth/register']"
+              class="text-decoration-none text-white"
+              >Register Now ?</a
+            >
+            <a
+              [routerLink]="['/auth/forgetPassword']"
+              class="text-decoration-none text-white"
+              >Forget Password ?</a
+            >
+          </div>
+          <button class="primary w-100">Login</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</section>

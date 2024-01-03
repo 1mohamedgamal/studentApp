@@ -1,0 +1,17 @@
+#login {
+  background-image: url(../../../../assets/images/bg3.jpeg);
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mat-icon {
+  color: #fff;
+}
+.mdc-text-field--filled:not(.mdc-text-field--disabled) .mdc-text-field__input {
+  color: #fff;
+}
