@@ -11,4 +11,11 @@ export class AuthService {
   onLogin(data: any): Observable<any> {
     return this._HttpClient.post('User/Login', data);
   }
+
+  onRegister(data: any): Observable<any> {
+    return this._HttpClient.post('User/POST', data);
+  }
+  onLogOut(data: any): Observable<any> {
+    return this._HttpClient.post('User/LogOut', data);
+  }
 }

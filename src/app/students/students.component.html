@@ -1,3 +1,26 @@
-<p>
-  students works!
-</p>
+<section class="d-flex justify-content-center align-items-center py-5">
+  <div class="table-responsive">
+    <table class="table table-bordered table-striped">
+      <thead class="table-dark">
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <!-- <th>Mobile</th> -->
+          <th>Email</th>
+          <th>National ID</th>
+          <!-- <th>Age</th> -->
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let student of studentsData">
+          <td>{{ student.ID }}</td>
+          <td>{{ student.Name }}</td>
+          <!-- <td>{{ student.Mobile }}</td> -->
+          <td>{{ student.Email }}</td>
+          <td>{{ student.NationalID }}</td>
+          <!-- <td>{{ student.Age }}</td> -->
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>

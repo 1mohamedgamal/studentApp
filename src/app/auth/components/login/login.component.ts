@@ -35,20 +35,25 @@ export class LoginComponent implements OnInit {
 
   message: string = '';
   onSubmit(data: FormGroup) {
+    debugger;
     console.log(data);
     this._AuthService.onLogin(data.value).subscribe({
       next: (res) => {
-        console.log(res);
-        this.message = res.message;
-        localStorage.setItem('userToken', res.token);
+        debugger;
+
+        if (res.Success && res.IsAuthorized) {
+          localStorage.setItem('userToken', res.Data);
+          this._toastr.success('Logged In', 'Successfully');
+          this._Router.navigate(['/dashboard']);
+
+        } else {
+          this.message = res.Message;
+        }
       },
       error: (err) => {
         this._toastr.error(err.error.message, 'Error!');
       },
-      complete: () => {
-        this._Router.navigate(['/dashboard']);
-        this._toastr.success('Logged In', 'Successfully');
-      },
+      complete: () => {},
     });
   }
 
