@@ -1,0 +1,15 @@
+<section id="dashboard">
+  <div class="">
+    <div class="row">
+      <app-navbar class="nav-bar py-2 shadow-sm"></app-navbar>
+      <div class="px-0 side-bar" [class]="receivedBoolean?'col-md-2':'col-md-1'">
+        <app-sidebar (isOpenedValue)="handleBooleanChange($event)">
+        </app-sidebar>
+      </div>
+      <div class="col-md-10 px-0 bg-gray shadow-lg" [class]="receivedBoolean?'col-md-10':'col-md-11'">
+        <router-outlet></router-outlet>
+
+      </div>
+    </div>
+  </div>
+</section>

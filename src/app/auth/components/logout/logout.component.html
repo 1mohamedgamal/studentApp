@@ -1,1 +1,15 @@
-<p>logout works!</p>
+<!-- logout-confirmation.component.html -->
+
+<!-- <div class="overlay"></div> -->
+
+<section class="auth-card">
+  <div class="confirmation-message text-center">
+    <i class="fas dark fa-sign-out-alt fa-2x mr-2"></i>
+    <p class="dark">Stay with us or logout !</p>
+  </div>
+
+  <div class="buttons d-flex justify-content-center mt-4">
+    <button class="btn btn-success me-2" (click)="cancel()">Stay</button>
+    <button class="btn btn-danger" (click)="confirm()">Logout</button>
+  </div>
+</section>
