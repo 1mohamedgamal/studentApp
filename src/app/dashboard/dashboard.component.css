@@ -1,3 +1,7 @@
+.row {
+  margin: 0;
+}
+
 .nav-bar {
   z-index: 200;
   padding: 0;

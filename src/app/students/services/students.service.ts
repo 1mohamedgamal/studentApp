@@ -16,4 +16,7 @@ export class StudentsService {
   onDelete(id: any): Observable<any> {
     return this._HttpClient.delete(`/Student/delete/${id}`);
   }
+  addStudent(data : any): Observable<any> {
+    return this._HttpClient.post('Student/Post', data);
+  }
 }
