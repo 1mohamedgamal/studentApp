@@ -10,13 +10,19 @@ export class StudentsService {
 
   getStudents(): Observable<any> {
     return this._HttpClient.get('Student/Get');
-  
   }
 
   onDelete(id: any): Observable<any> {
     return this._HttpClient.delete(`/Student/delete/${id}`);
   }
-  addStudent(data : any): Observable<any> {
+  addStudent(data: any): Observable<any> {
     return this._HttpClient.post('Student/Post', data);
+  }
+  getStudentById(ID: any): Observable<any> {
+    return this._HttpClient.get(`Student/GetEditableByID?id=${ID}`);
+  }
+
+  updateStudent(Data: any ): Observable<any> {
+    return this._HttpClient.put(`Student/PUT`, Data);
   }
 }

@@ -1,0 +1,33 @@
+#register {
+//   background-image: url(../../../../assets/images/bg3.jpeg);
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.mat-icon {
+  color: #fff;
+}
+._nghost-ng-c2040221903 {
+  background: none;
+}
+
+.mdc-text-field--filled:not(.mdc-text-field--disabled) .mdc-text-field__input {
+  color: #fff;
+}
+.circle-preview {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-color: bisque;
+  border: 4px dashed #ef9b28;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}

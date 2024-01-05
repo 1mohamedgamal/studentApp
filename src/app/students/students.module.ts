@@ -7,16 +7,25 @@ import { DeleteComponent } from './components/delete/delete.component';
 import { AddstudentComponent } from './components/addstudent/addstudent.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-const routes: Routes = [{ path: '', component: StudentsComponent }];
+import { EditStudentComponent } from './components/edit-student/edit-student.component';
+const routes: Routes = [
+  { path: '', component: StudentsComponent },
+  { path: 'edit/:id', component: EditStudentComponent },
+];
 
 @NgModule({
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
     SharedModule,
-HttpClientModule,
+    HttpClientModule,
     ReactiveFormsModule,
   ],
-  declarations: [StudentsComponent, DeleteComponent, AddstudentComponent],
+  declarations: [
+    StudentsComponent,
+    DeleteComponent,
+    AddstudentComponent,
+    EditStudentComponent,
+  ],
 })
 export class StudentsModule {}
