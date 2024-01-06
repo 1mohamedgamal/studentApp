@@ -5,7 +5,7 @@ import { CommonModule } from '@angular/common';
 import { AuthComponent } from './auth.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
-import { LogoutComponent } from './components/logout/logout.component';
+// import { LogoutComponent } from './components/logout/logout.component';
 import { RouterModule, Routes } from '@angular/router';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatIconModule } from '@angular/material/icon';
@@ -26,15 +26,12 @@ const routes: Routes = [
     ReactiveFormsModule,
     MatFormFieldModule,
     MatDialogModule,
-    MatIconModule,SharedModule,
+
+    MatIconModule,
+    SharedModule,
     HttpClientModule,
   ],
-  declarations: [
-    AuthComponent,
-    LoginComponent,
-    RegisterComponent,
-    LogoutComponent,
-  ],
+  declarations: [AuthComponent, LoginComponent, RegisterComponent],
   exports: [
     MatDialogModule,
     FormsModule,

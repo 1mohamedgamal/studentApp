@@ -1,0 +1,258 @@
+<section class="container register">
+  <div class="p-4 bgColor auth-card">
+    <form [formGroup]="editStudent">
+      <div class="row align-items-center">
+        <div class="col-md-6">
+          <div class="title mb-2">
+            <!-- <span>Welcome to PMS</span> -->
+            <h3 class="fs-3">edit Student</h3>
+          </div>
+        </div>
+      </div>
+      <!-- <div></div> -->
+      <div class="row">
+        <div class="col-md-6">
+          <mat-form-field appearance="fill" class="w-100">
+            <mat-label>FirstName</mat-label>
+            <input
+              formControlName="FirstName"
+              matInput
+              
+              placeholder="Enter Your FirstName"
+            />
+          </mat-form-field>
+          <span
+            class="text-danger mb-3"
+            *ngIf="
+              editStudent.get('FirstName')?.invalid &&
+              (editStudent.get('FirstName')?.dirty ||
+                editStudent.get('FirstName')?.touched)
+            "
+          >
+            <span *ngIf="editStudent.get('FirstName')?.hasError('required')"
+              >FirstName is required</span
+            >
+            <span *ngIf="editStudent.get('FirstName')?.hasError('pattern')"
+              >Invalid FirstName format must contains numbers
+              andcharacters</span
+            >
+          </span>
+        </div>
+        <div class="col-md-6">
+          <mat-form-field appearance="fill" class="w-100">
+            <mat-label>LastName</mat-label>
+            <input
+              formControlName="LastName"
+              matInput
+              placeholder="Enter Your LastName"
+            />
+          </mat-form-field>
+          <span
+            class="text-danger mb-3"
+            *ngIf="
+              editStudent.get('LastName')?.invalid &&
+              (editStudent.get('LastName')?.dirty ||
+                editStudent.get('LastName')?.touched)
+            "
+          >
+            <span *ngIf="editStudent.get('LastName')?.hasError('required')"
+              >Name is required</span
+            >
+
+            >
+          </span>
+        </div>
+
+        <div class="col-md-6">
+          <mat-form-field appearance="fill" class="w-100">
+            <mat-label>Phone Number</mat-label>
+            <input
+              formControlName="Mobile"
+              matInput
+              placeholder="Enter Your Phone Number"
+            />
+          </mat-form-field>
+          <span
+            *ngIf="
+              editStudent.get('Mobile')?.errors &&
+              editStudent.get('Mobile')?.touched
+            "
+            class="text-danger mb-3"
+          >
+            <span
+              *ngIf="editStudent.get('Mobile')?.errors?.['required']"
+              class="mb-0"
+              >Mobile is required</span
+            >
+            <span
+              *ngIf="editStudent.get('Mobile')?.errors?.['pattern']"
+              class="mb-0"
+              >Mobile starts with 011/012/015/010 and length 11 number
+            </span>
+          </span>
+        </div>
+
+        <div class="col-md-6">
+          <mat-form-field appearance="fill" class="w-100">
+            <mat-label>E-mail</mat-label>
+            <input
+              formControlName="Email"
+              matInput
+              placeholder="Enter Your Email"
+            />
+          </mat-form-field>
+          <span
+            class="text-danger mb-3"
+            *ngIf="
+              editStudent.get('Email')?.invalid &&
+              editStudent.get('Email')?.touched
+            "
+          >
+            <span *ngIf="editStudent.get('Email')?.hasError('required')"
+              >Email is required</span
+            >
+            <span *ngIf="editStudent.get('Email')?.hasError('pattern')"
+              >Email must have capital,small letters,sympols,number and pass
+              length(2)</span
+            >
+          </span>
+        </div>
+
+        <div class="col-md-6">
+          <mat-form-field appearance="fill" class="w-100">
+            <mat-label>NationalID</mat-label>
+            <input
+              formControlName="NationalID"
+              matInput
+              placeholder="Enter Your NationalID"
+            />
+          </mat-form-field>
+          <span
+            class="text-danger mb-3"
+            *ngIf="
+              editStudent.get('NationalID')?.invalid &&
+              (editStudent.get('NationalID')?.dirty ||
+                editStudent.get('NationalID')?.touched)
+            "
+          >
+            <span *ngIf="editStudent.get('NationalID')?.hasError('required')"
+              >Name is required</span
+            >
+
+            >
+          </span>
+        </div>
+
+        <div class="col-md-6">
+          <mat-form-field appearance="fill" class="w-100">
+            <mat-label>ID</mat-label>
+            <input formControlName="ID" matInput placeholder="Enter Your ID" />
+          </mat-form-field>
+          <span
+            class="text-danger mb-3"
+            *ngIf="
+              editStudent.get('ID')?.invalid &&
+              (editStudent.get('ID')?.dirty || editStudent.get('ID')?.touched)
+            "
+          >
+            <span *ngIf="editStudent.get('ID')?.hasError('required')"
+              >ID is required</span
+            >
+
+            >
+          </span>
+        </div>
+
+        <div class="col-md-6">
+          <mat-form-field appearance="fill" class="w-100">
+            <mat-label>NameArabic</mat-label>
+            <input
+              formControlName="NameArabic"
+              matInput
+              placeholder="Enter Your NameArabic"
+            />
+          </mat-form-field>
+          <span
+            class="text-danger mb-3"
+            *ngIf="
+              editStudent.get('NameArabic')?.invalid &&
+              (editStudent.get('NameArabic')?.dirty ||
+                editStudent.get('NameArabic')?.touched)
+            "
+          >
+            <span *ngIf="editStudent.get('NameArabic')?.hasError('required')"
+              >Name is required</span
+            >
+
+            >
+          </span>
+        </div>
+
+
+
+     <div class="col-md-6">
+          <mat-form-field appearance="fill" class="w-100">
+            <mat-label>NameEnglish</mat-label>
+            <input
+              formControlName="NameEnglish"
+              matInput
+              placeholder="Enter Your NameEnglish"
+            />
+          </mat-form-field>
+          <span
+            class="text-danger mb-3"
+            *ngIf="
+              editStudent.get('NameEnglish')?.invalid &&
+              (editStudent.get('NameEnglish')?.dirty ||
+                editStudent.get('NameEnglish')?.touched)
+            "
+          >
+            <span *ngIf="editStudent.get('NameEnglish')?.hasError('required')"
+              >Name is required</span
+            >
+
+            >
+          </span>
+        </div>
+
+
+
+
+        
+
+        <div class="col-md-6">
+          <mat-form-field appearance="fill" class="w-100">
+            <mat-label>Age</mat-label>
+            <input
+              formControlName="Age"
+              matInput
+              placeholder="Enter Your Age"
+            />
+          </mat-form-field>
+          <span
+            class="text-danger mb-3"
+            *ngIf="
+              editStudent.get('Age')?.invalid &&
+              (editStudent.get('Age')?.dirty || editStudent.get('Age')?.touched)
+            "
+          >
+            <span *ngIf="editStudent.get('Age')?.hasError('required')"
+              >Name is required</span
+            >
+
+            >
+          </span>
+        </div>
+      </div>
+
+      <div class="text-center mt-3">
+        <button
+          class="primary text-center w-50"
+          (click)="onSubmit(editStudent)"
+        >
+          Edit
+        </button>
+      </div>
+    </form>
+  </div>
+</section>

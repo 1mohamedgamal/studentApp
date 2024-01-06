@@ -1,0 +1,25 @@
+<div class="auth-card">
+  <div class="text-end mb-3">
+    <span
+      class="pointer"
+      (click)="onNoClick()"
+      routerLink="/dashboard/admin/projects"
+      ><i class="fa-regular fa-circle-xmark text-secondry"></i
+    ></span>
+  </div>
+  <div class="text-center text-white">
+    <h4>
+      Delete This Student? 
+    </h4>
+    <p>are you sure you want to delete this Student ?</p>
+  </div>
+  <div class="text-center">
+    <button
+      [mat-dialog-close]="data"
+      cdkFocusInitial
+      class="btn btn-outline-danger my-3 text-danger text-center bg-white"
+    >
+      Delete
+    </button>
+  </div>
+</div>

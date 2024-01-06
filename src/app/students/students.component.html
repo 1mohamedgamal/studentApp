@@ -1,3 +1,76 @@
-<p>
-  students works!
-</p>
+<section class="container">
+
+  
+
+
+  
+
+
+  <div class="py-5 container">
+   
+   <div class="mb-3 d-flex justify-content-end">
+    <button class="primary px-3" (click)="addStudentDialoug()">
+      <span class="fa-solid fa-plus mx-2"></span>
+      <span>Add New student</span>
+    </button>
+</div>
+
+
+        <div class="col-7 d-flex">
+        <input
+          class="form-control me-2"
+          type="text"
+          [(ngModel)]="searchValue"
+          (keyup)="StudentsData(searchValue)"
+
+          placeholder="Search"
+        />
+    <!-- <button   class="primary px-3"(click)="StudentsData(searchValue)"> Search</button> -->
+  </div>
+  </div>
+  <div class="table-card container"> 
+    <div class="p-3">
+      <!-- <div class="w-100"></div> -->
+    </div>
+    <table class="table table-striped">
+      <thead>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Phone</th>
+        <th>Email</th>
+        <th>Actions</th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let student of studentsData">
+          <td>{{ student.ID }}</td>
+          <td>{{ student.Name }}</td>
+          <td>{{ student.Mobile }}</td>
+          <td>{{ student.Email }}</td>
+          <td>
+            <button
+              mat-icon-button
+              [matMenuTriggerFor]="menu"
+              aria-label="Example icon-button with a menu"
+            >
+              <mat-icon>more_vert</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu">
+              <button
+                mat-menu-item
+                [routerLink]="['/dashboard/students/edit', student.ID]"
+              >
+                <mat-icon>edit-square</mat-icon>
+                <span>Edit</span>
+              </button>
+              <button mat-menu-item (click)="openDeletedialoug(student.ID)">
+                <mat-icon>delete</mat-icon>
+                <span>Delete</span>
+              </button>
+            </mat-menu>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div></div>
+  </div>
+</section>

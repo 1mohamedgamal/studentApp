@@ -1,0 +1,48 @@
+<section
+  id="sidebar"
+  [ngClass]="{ 'max-height': isMaxHeight, 'v-height': is100vHeight }"
+>
+  <div class="container-fluid">
+    <div class="row">
+      <div>
+        <a
+          (click)="onClicked()"
+          [ngClass]="isOpened ? 'position-left' : 'position-right'"
+          ><i
+            class="fa-solid"
+            [class]="isOpened ? 'fa-chevron-left' : 'fa-chevron-right'"
+          ></i
+        ></a>
+      </div>
+      <div class="mt-5">
+        <a
+          class="d-block text-decoration-none"
+          [routerLink]="item.link"
+          routerLinkActive="bg-active"
+          *ngFor="let item of menu"
+        >
+          <div
+            class="item d-flex"
+            [class]="isOpened ? '' : 'justify-content-center'"
+          >
+            <span><i [class]="item.icon"></i></span>
+            <span class="icon-name" [ngClass]="{ 'd-none': !isOpened }">{{
+              item.title
+            }}</span>
+          </div>
+        </a>
+
+        <div
+          (click)="logOut()"
+          class="item d-flex"
+          [class]="isOpened ? '' : 'justify-content-center'"
+        >
+          <span 
+            ><i class="fa-solid fa-right-from-bracket"></i
+          ></span>
+          <span class="" [ngClass]="{ 'd-none': !isOpened }">Logout</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
