@@ -1,6 +1,9 @@
 <section class="container register">
   <div class="p-4 bgColor auth-card">
-    <form [formGroup]="editStudent">
+    <form [formGroup]="editStudent" (ngSubmit)="onSubmit(editStudent)">
+
+
+
       <div class="row align-items-center">
         <div class="col-md-6">
           <div class="title mb-2">
@@ -248,7 +251,6 @@
       <div class="text-center mt-3">
         <button
           class="primary text-center w-50"
-          (click)="onSubmit(editStudent)"
         >
           Edit
         </button>

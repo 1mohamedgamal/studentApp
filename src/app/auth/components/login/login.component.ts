@@ -44,10 +44,10 @@ export class LoginComponent implements OnInit {
         if (res.Success && res.IsAuthorized) {
           localStorage.setItem('userToken', res.Data);
           this._toastr.success('Logged In', 'Successfully');
-          this._Router.navigate(['/dashboard']);
-
+          this._Router.navigate(['/dashboard/home']);
         } else {
           this.message = res.Message;
+          this._toastr.error;
         }
       },
       error: (err) => {

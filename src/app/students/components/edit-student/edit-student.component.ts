@@ -15,8 +15,8 @@ export class EditStudentComponent implements OnInit {
   studentdata: any;
 
   editStudent = new FormGroup({
-    NameArabic: new FormControl(null),
-    NameEnglish: new FormControl(null),
+    NameArabic: new FormControl(null, [Validators.required]),
+    NameEnglish: new FormControl(null, [Validators.required]),
     ID: new FormControl(),
     FirstName: new FormControl(null, [Validators.required]),
     LastName: new FormControl(null, [Validators.required]),
@@ -32,18 +32,7 @@ export class EditStudentComponent implements OnInit {
     Age: new FormControl(null, [Validators.required]),
   });
 
-  //  let x = {
-  //       NameArabic: 'محمد',
-  //       NameEnglish: 'mohamed',
-  //       ID: 1077,
-  //       FirstName: 'shimaa',
-  //       LastName: 'ahmed',
-  //       Mobile: 'string',
-  //       Email: 'string',
-  //       NationalID: 'string',
-  //       Age: 0,
-  //     };
-
+  
   constructor(
     private _studentService: StudentsService,
     private _toastr: ToastrService,
@@ -84,12 +73,10 @@ export class EditStudentComponent implements OnInit {
 
   onSubmit(editStudent: FormGroup) {
     // debugger
-// test
-// test
+    // test
+    // test
     this._studentService.updateStudent(this.editStudent.value).subscribe({
-      next: (res: any) => {
-  
-      },
+      next: (res: any) => {},
       error: (err: any) => {
         console.error('An error occurred during update:', err);
       },
@@ -97,7 +84,6 @@ export class EditStudentComponent implements OnInit {
       complete: () => {
         this._toastr.success('Successfully updated');
         this.Router.navigate(['/dashboard/students']);
-
       },
     });
   }
