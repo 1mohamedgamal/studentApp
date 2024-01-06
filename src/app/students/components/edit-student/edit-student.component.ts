@@ -84,12 +84,11 @@ export class EditStudentComponent implements OnInit {
 
   onSubmit(editStudent: FormGroup) {
     // debugger
-
+// test
+// test
     this._studentService.updateStudent(this.editStudent.value).subscribe({
       next: (res: any) => {
-        // console.log(res);
-        // console.log(this.studentId);
-        // this._toastr.success('Successfully updated');
+  
       },
       error: (err: any) => {
         console.error('An error occurred during update:', err);
@@ -99,7 +98,6 @@ export class EditStudentComponent implements OnInit {
         this._toastr.success('Successfully updated');
         this.Router.navigate(['/dashboard/students']);
 
-        // this.Router.navigate(['/dashboard/admin/recipes']);
       },
     });
   }

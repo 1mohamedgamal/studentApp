@@ -5,12 +5,13 @@ import { RouterModule, Routes } from '@angular/router';
 import { SharedModule } from '../shared/shared.module';
 import { DeleteComponent } from './components/delete/delete.component';
 import { AddstudentComponent } from './components/addstudent/addstudent.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { EditStudentComponent } from './components/edit-student/edit-student.component';
 const routes: Routes = [
   { path: '', component: StudentsComponent },
   { path: 'edit/:id', component: EditStudentComponent },
+  
 ];
 
 @NgModule({
@@ -20,6 +21,7 @@ const routes: Routes = [
     SharedModule,
     HttpClientModule,
     ReactiveFormsModule,
+    FormsModule
   ],
   declarations: [
     StudentsComponent,

@@ -15,7 +15,7 @@ export class AuthService {
   onRegister(data: any): Observable<any> {
     return this._HttpClient.post('User/POST', data);
   }
-  onLogOut(data: any): Observable<any> {
-    return this._HttpClient.post('User/LogOut', data);
+  onLogOut(): Observable<any> {
+    return this._HttpClient.post('User/LogOut',null);
   }
 }
