@@ -75,7 +75,9 @@
               >Register Now ?</a
             >
           </div>
-          <button class="primary w-100">Login</button>
+          <button class="primary w-100" [disabled]="loginForm.invalid">
+            Login
+          </button>
         </div>
       </div>
     </form>
