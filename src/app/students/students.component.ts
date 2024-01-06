@@ -20,23 +20,23 @@ export class StudentsComponent implements OnInit {
     private Router: Router,
     private _ToastrService: ToastrService
   ) {}
-  searchValue:any
+  searchValue: any;
   ngOnInit(): void {
     this.StudentsData(null as any);
   }
 
-
-
-
-  
   StudentsData(text: string) {
     this.studentsService.getStudents().subscribe(
       (data: any) => {
-        // Assuming the API response is stored in 'data'
-        this.studentsData = data.Data; // Assigning the fetched data to studentsData
+        this.studentsData = data.Data;
         if (text) {
           this.studentsData = this.studentsData.filter(
-            (st) => st.Name.includes(text) 
+            (st) =>
+              st.Name.includes(text) |
+                st.Email.includes(text) |
+                st.Mobile.includes(text) 
+                // st.NationlID.includes(text) 
+                //  st.Age.includes(text)
           );
         }
       },
@@ -46,12 +46,22 @@ export class StudentsComponent implements OnInit {
     );
   }
 
-  addStudentDialoug() {
+  addStudentDialog() {
     const dialogRef = this.dialog.open(AddstudentComponent, {
       data: {},
       width: '35%',
     });
+
+    // dialogRef.componentInstance.onStudentAdded.subscribe(() => {
+    //   this.StudentsData(null as any);
+    // });
+
+    dialogRef.afterClosed().subscribe((result) => {
+      console.log('The dialog was closed');
+      this.StudentsData(null as any);
+    });
   }
+
   openDeletedialoug(ID: number) {
     const dialogRef = this.dialog.open(DeleteComponent, {
       data: { ID },

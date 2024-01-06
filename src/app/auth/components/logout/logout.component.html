@@ -1,15 +1,17 @@
-<!-- logout-confirmation.component.html -->
+<section class="logout">
+  <h2 mat-dialog-title class="w-100 p-3 text-center text-white fw-normal">
+    Are you sure you want to logout?
+  </h2>
 
-<!-- <div class="overlay"></div> -->
-
-<section class="auth-card">
-  <div class="confirmation-message text-center">
-    <i class="fas dark fa-sign-out-alt fa-2x mr-2"></i>
-    <p class="dark">Stay with us or logout !</p>
-  </div>
-
-  <div class="buttons d-flex justify-content-center mt-4">
-    <button class="btn btn-success me-2" (click)="cancel()">Stay</button>
-    <button class="btn btn-danger" (click)="confirm()">Logout</button>
+  <div mat-dialog-actions class="me-2 d-flex justify-content-between">
+    <button
+      (click)="confirm()"
+      class="btn btn-success"
+      mat-button
+      cdkFocusInitial
+    >
+      Yes
+    </button>
+    <button class="btn btn-danger" mat-button (click)="cancel()">Cancel</button>
   </div>
 </section>

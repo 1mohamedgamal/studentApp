@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { AuthService } from 'src/app/auth/services/auth.service';
 import { StudentsService } from '../../services/students.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-addstudent',
@@ -10,6 +11,8 @@ import { StudentsService } from '../../services/students.service';
   styleUrls: ['./addstudent.component.scss'],
 })
 export class AddstudentComponent {
+  // @Output() onStudentAdded: EventEmitter<void> = new EventEmitter<void>();
+
   hide = true;
   hideConfirm = true;
   message: string = '';
@@ -32,7 +35,8 @@ export class AddstudentComponent {
 
   constructor(
     private _student: StudentsService,
-    private _toastr: ToastrService
+    private _toastr: ToastrService,
+    private Router: Router
   ) {}
 
   onsubmit() {
@@ -40,13 +44,9 @@ export class AddstudentComponent {
 
     this._student.addStudent(this.addStudent.value).subscribe({
       next: (res: any) => {
-        // if (res.Data && res.Success && res.IsAuzorized) {
-          console.log(res.Success);
-          this._toastr.success(this.message, 'Successfully registered');
-          debugger;
-        // } else {
-          // console.log(res.Error);
-        // }
+        console.log(res.Success);
+        this._toastr.success(this.message, 'Successfully registered');
+        // this.onStudentAdded.emit(); 
       },
       error: (err: any) => {
         console.error('An error occurred:', err);
@@ -54,9 +54,8 @@ export class AddstudentComponent {
 
       complete: () => {
         this.addStudent.reset();
+        this.Router.navigate(['/dashboard/students']);
       },
     });
   }
 }
-
-
