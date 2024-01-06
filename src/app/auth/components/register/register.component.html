@@ -68,43 +68,7 @@
               </div>
             </div>
 
-            <!-- <div class="col-md-12">
-              <mat-form-field appearance="fill" class="w-100">
-                <mat-label>Password</mat-label>
-                <input
-                  formControlName="Password"
-                  matInput
-                  placeholder="Enter Your Password"
-                />
-                <button
-                  type="button"
-                  mat-icon-button
-                  matSuffix
-                  [attr.aria-label]="'Hide Password'"
-                >
-                  <!-- <mat-icon>{{
-                  }}</mat-icon> -->
-            <!-- </button> -->
-            <!-- </mat-form-field> -->
-            <!-- <span
-                *ngIf="
-                  registerForm.get('Password')?.errors &&
-                  registerForm.get('Password')?.touched
-                "
-                class="text-danger mb-3"
-              >
-                <span
-                  *ngIf="registerForm.get('password')?.errors?.['required']"
-                >
-                  password is required
-                </span>
-                <span *ngIf="registerForm.get('password')?.errors?.['pattern']">
-                  Password must have capital,small letters,sympols,number and
-                  pass length(8-16)
-                </span>
-              </span> -->
-            <!-- </div>  -->
-
+            
             <div class="col-md-12">
               <mat-form-field appearance="fill" class="w-100">
                 <mat-label>Password</mat-label>
@@ -153,7 +117,7 @@
               >
             </div>
             <div class="text-center mt-3">
-              <button class="primary text-center w-100">Register</button>
+              <button class="primary text-center w-100" [disabled]=registerForm.invalid>Register</button>
             </div>
           </form>
         </div>

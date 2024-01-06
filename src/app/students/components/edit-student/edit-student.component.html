@@ -1,9 +1,6 @@
 <section class="container register">
   <div class="p-4 bgColor auth-card">
     <form [formGroup]="editStudent" (ngSubmit)="onSubmit(editStudent)">
-
-
-
       <div class="row align-items-center">
         <div class="col-md-6">
           <div class="title mb-2">
@@ -20,7 +17,6 @@
             <input
               formControlName="FirstName"
               matInput
-              
               placeholder="Enter Your FirstName"
             />
           </mat-form-field>
@@ -191,9 +187,7 @@
           </span>
         </div>
 
-
-
-     <div class="col-md-6">
+        <div class="col-md-6">
           <mat-form-field appearance="fill" class="w-100">
             <mat-label>NameEnglish</mat-label>
             <input
@@ -217,11 +211,6 @@
             >
           </span>
         </div>
-
-
-
-
-        
 
         <div class="col-md-6">
           <mat-form-field appearance="fill" class="w-100">
@@ -251,6 +240,7 @@
       <div class="text-center mt-3">
         <button
           class="primary text-center w-50"
+          [disabled]="editStudent.invalid"
         >
           Edit
         </button>
