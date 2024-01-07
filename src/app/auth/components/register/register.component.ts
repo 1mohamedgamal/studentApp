@@ -48,6 +48,7 @@ export class RegisterComponent {
 
       complete: () => {
         this.registerForm.reset();
+        this._toastr.success(this.message, 'Successfully registered');
       },
     });
   }
