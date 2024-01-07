@@ -12,6 +12,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { HttpClientModule } from '@angular/common/http';
 import { SharedModule } from '../shared/shared.module';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -31,7 +32,7 @@ const routes: Routes = [
     SharedModule,
     HttpClientModule,
   ],
-  declarations: [AuthComponent, LoginComponent, RegisterComponent],
+  declarations: [AuthComponent, LoginComponent, RegisterComponent, NotFoundComponent],
   exports: [
     MatDialogModule,
     FormsModule,
